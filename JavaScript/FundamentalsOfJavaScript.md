@@ -521,6 +521,7 @@ Loops used to repeat a block of code
 ---
 
 # Functions
+
 A JavsScript function is a block of code designed to perform a particular task.
 
 Ex: Add two numbers, multiply two numbers etc.
@@ -534,26 +535,27 @@ Passing different arguments to produce different results
 It also helps organize code into smaller maintainable code blocks
 
 Syntax:
+
 ```js
 function name(parameter1, parameter2, parameter3) {
-    // code to be executed
+  // code to be executed
 }
 // username >> Called function parameter
 
 // Examples:
 function greet(username) {
-    console.log('Welcome ' + username);
+  console.log("Welcome " + username);
 }
 
-greet('Afrah') // Afrah >> Called function argument
+greet("Afrah"); // Afrah >> Called function argument
 
 //------------------------------------------------------
 
 function add(num1, num2) {
-    return num1 + num2
+  return num1 + num2;
 }
 
-const sum = add(8, 8)
+const sum = add(8, 8);
 
 console.log(sum);
 ```
@@ -563,12 +565,13 @@ console.log(sum);
 With arrow functions we do have a more concise syntax.
 
 Ex:
+
 ```js
 const arrowSum = (a, b) => {
-    return a + b
-}
+  return a + b;
+};
 
-const sum = arrowSum(8, 8)
+const sum = arrowSum(8, 8);
 
 console.log(sum);
 
@@ -578,10 +581,11 @@ console.log(sum);
 If you just have one statement that is returned, you can omit the curly braces and the return keyword.
 
 Ex:
-```js
-const arrowSum = (num1, num2) => num1 + num2
 
-const sum = arrowSum(8, 8)
+```js
+const arrowSum = (num1, num2) => num1 + num2;
+
+const sum = arrowSum(8, 8);
 
 console.log(sum);
 ```
@@ -589,10 +593,63 @@ console.log(sum);
 If you just have one argument, you can if you want to omit the parantheses around the argument.
 
 Ex:
-```js
-const arrowSum = num => num
 
-const sum = arrowSum(8)
+```js
+const arrowSum = (num) => num;
+
+const sum = arrowSum(8);
 
 console.log(sum);
 ```
+
+# Scope
+
+Scope basically determines the accessibility or visibility of variables.
+
+## JavaScript Has 3 Types Of Scope:
+
+1. **Block Scope**
+
+   Block scope was introduced in 2015 with the introduction of _let_ and _const_ keywords.
+
+   It basically dictates that variables declared inside a pair of curly braces cannot be accessed from outside the block.
+
+   Ex:
+
+   ```js
+   if (true) {
+     const x = 2;
+   }
+   // x can NOT be used here
+   ```
+
+1. **Function Scope**
+
+   Function scope which dictates that variables declared inside a function are not accessible from outside the function.
+
+   Ex:
+
+   ```js
+   function myFunction() {
+     const carName = "Volvo"; // Function Scope
+   }
+   ```
+
+1. **Global Scope**
+
+   Global Scope which is the scope outside any block or a function.
+
+   A global scoped variable is accessible both inside a block as well as a function.
+
+   Will not overwrite block or function scoped variables.
+
+   Ex:
+
+   ```js
+   const carName = "Volvo";
+   // code here can use carName
+
+   function myFunction() {
+     // code here can also use carName
+   }
+   ```
