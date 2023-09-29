@@ -409,7 +409,7 @@ const var2 = "10";
 console.log(var1 === var2); // Return false
 ```
 
-> All the valuse we have just seen are treeted as faulty values in JavaScript, and double equals we'll treat them as equals
+> All the valuse we have just seen are treeted as faulty values in JavaScript, and double equals we'll treat them as equals.
 
 # Conditional Statements
 
@@ -426,21 +426,173 @@ Conditional statements are used to perform different actions based on different 
 
 Loops used to repeat a block of code
 
-1. For loop
+1. **For loop**
 
    - Syntax:
-     `js
-    for (initializer; condition, final-expression) {
+
+     ```js
+     for (initializer; condition, final-expression) {
+         // code to run
+     }
+
+     // Example:
+     for(let i=1; i<=5; i++) {
+         console.log('Welcome JavaScript ' + i);
+     }
+     ```
+
+     **initializer** >> is run before starting the loop.
+
+     **condition** >> is checked to see if the loop should stop.
+
+     **final-expression** >> is run each time the loop has gone through an iteration.
+
+   ***
+
+1. **While loop**
+
+   - Syntax:
+
+     ```js
+     initializer;
+     while (condition) {
+       // code to run
+
+       final - expression;
+     }
+
+     // Example:
+     let j = 1;
+     while (j <= 5) {
+       console.log("Welocme JavaScript " + j);
+
+       j++;
+     }
+     ```
+
+   ***
+
+1. **Do..while loop**
+
+   - It is always executed at least once, because the condition comes after the code inside the loop.
+
+   - Syntax:
+
+     ```js
+     initializer;
+     do {
+       // code to run
+
+       final - expression;
+     } while (condition);
+
+     // Example:
+     let i = 1;
+     do {
+       console.log("Welocme JavaScript " + i);
+
+       i++;
+     } while (i <= 5);
+     ```
+
+   ***
+
+1. **For..of loop**
+
+   - Syntax:
+
+     ```js
+     for (const item of  array)
         // code to run
-    }
-    for(i=0;i>40;i++)
-    `
-     initializer >> is run before starting the loop.
+     ```
 
-   condition >> is checked to see if the loop should stop.
+   - It is best suited for a collection of data as it abstracts away two things:
 
-   final-expression >> is run each time the loop has gone through an iteration.
+     - **First:**
 
-1. While loop
-1. Do..while loop
-1. For..of loop
+       You don't have to keep track of a variable to increment the iteration count.
+
+     - **Second:**
+
+       You don't have to figure out how to access the item in the collection
+
+   - You just have to worry about the code that needs to be run.
+
+---
+
+# Functions
+A JavsScript function is a block of code designed to perform a particular task.
+
+Ex: Add two numbers, multiply two numbers etc.
+
+Functions are reusable as they can be defined once and can be called with different values resulting in different results.
+
+Functions help divide a complex problem into smaller chunks and makes your program easy to understand and maintain.
+
+Passing different arguments to produce different results
+
+It also helps organize code into smaller maintainable code blocks
+
+Syntax:
+```js
+function name(parameter1, parameter2, parameter3) {
+    // code to be executed
+}
+// username >> Called function parameter
+
+// Examples:
+function greet(username) {
+    console.log('Welcome ' + username);
+}
+
+greet('Afrah') // Afrah >> Called function argument
+
+//------------------------------------------------------
+
+function add(num1, num2) {
+    return num1 + num2
+}
+
+const sum = add(8, 8)
+
+console.log(sum);
+```
+
+**Arrow Function**
+
+With arrow functions we do have a more concise syntax.
+
+Ex:
+```js
+const arrowSum = (a, b) => {
+    return a + b
+}
+
+const sum = arrowSum(8, 8)
+
+console.log(sum);
+
+// => : Called fat arrow
+```
+
+If you just have one statement that is returned, you can omit the curly braces and the return keyword.
+
+Ex:
+```js
+const arrowSum = (num1, num2) => num1 + num2
+
+const sum = arrowSum(8, 8)
+
+console.log(sum);
+```
+
+If you just have one argument, you can if you want to omit the parantheses around the argument.
+
+Ex:
+```js
+const arrowSum = num => num
+
+const sum = arrowSum(8)
+
+console.log(sum);
+```
